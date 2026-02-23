@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FreelanceMarketplace")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8afca1630aa84aa591f5272a7daa43695720d906")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+511913acee90f9ddbfca5efbc071570dccc7628f")]
 [assembly: System.Reflection.AssemblyProductAttribute("FreelanceMarketplace")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FreelanceMarketplace")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
