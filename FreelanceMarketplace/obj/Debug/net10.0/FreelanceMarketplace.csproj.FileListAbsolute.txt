@@ -121,3 +121,12 @@
 /Users/kbredelis/Desktop/Laisvai/FreelanceMarketplace/bin/Debug/net10.0/tr/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
 /Users/kbredelis/Desktop/Laisvai/FreelanceMarketplace/bin/Debug/net10.0/zh-Hans/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
 /Users/kbredelis/Desktop/Laisvai/FreelanceMarketplace/bin/Debug/net10.0/zh-Hant/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+/Users/kbredelis/Desktop/Laisvai/FreelanceMarketplace/bin/Debug/net10.0/BCrypt.Net-Next.dll
+/Users/kbredelis/Desktop/Laisvai/FreelanceMarketplace/bin/Debug/net10.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
+/Users/kbredelis/Desktop/Laisvai/FreelanceMarketplace/bin/Debug/net10.0/Microsoft.IdentityModel.Abstractions.dll
+/Users/kbredelis/Desktop/Laisvai/FreelanceMarketplace/bin/Debug/net10.0/Microsoft.IdentityModel.JsonWebTokens.dll
+/Users/kbredelis/Desktop/Laisvai/FreelanceMarketplace/bin/Debug/net10.0/Microsoft.IdentityModel.Logging.dll
+/Users/kbredelis/Desktop/Laisvai/FreelanceMarketplace/bin/Debug/net10.0/Microsoft.IdentityModel.Protocols.dll
+/Users/kbredelis/Desktop/Laisvai/FreelanceMarketplace/bin/Debug/net10.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+/Users/kbredelis/Desktop/Laisvai/FreelanceMarketplace/bin/Debug/net10.0/Microsoft.IdentityModel.Tokens.dll
+/Users/kbredelis/Desktop/Laisvai/FreelanceMarketplace/bin/Debug/net10.0/System.IdentityModel.Tokens.Jwt.dll
