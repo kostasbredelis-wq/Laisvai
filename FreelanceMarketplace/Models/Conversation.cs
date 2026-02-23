@@ -23,9 +23,9 @@ public class Conversation
 
     public Application? Application { get; set; }
 
-    public DateTime CreatedAt { get; set; }
+    public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
 
-    public DateTime UpdatedAt { get; set; }
+    public DateTime UpdatedAt { get; set; } = DateTime.UtcNow;
 
     public ICollection<Message> Messages { get; set; } = new List<Message>();
 }

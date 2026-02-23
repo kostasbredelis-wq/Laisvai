@@ -28,11 +28,11 @@ public class FreelancerProfile
     public string? AvatarUrl { get; set; }
 
     [Required]
-    public FreelancerApplicationStatus ApplicationStatus { get; set; }
+    public FreelancerApplicationStatus ApplicationStatus { get; set; } = FreelancerApplicationStatus.Pending;
 
-    public DateTime CreatedAt { get; set; }
+    public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
 
-    public DateTime UpdatedAt { get; set; }
+    public DateTime UpdatedAt { get; set; } = DateTime.UtcNow;
 
     public ICollection<FreelancerSkill> FreelancerSkills { get; set; } = new List<FreelancerSkill>();
 

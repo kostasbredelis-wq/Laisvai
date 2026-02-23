@@ -20,11 +20,11 @@ public class Application
     public required string CoverMessage { get; set; }
 
     [Required]
-    public ApplicationStatus Status { get; set; }
+    public ApplicationStatus Status { get; set; } = ApplicationStatus.Pending;
 
-    public DateTime CreatedAt { get; set; }
+    public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
 
-    public DateTime UpdatedAt { get; set; }
+    public DateTime UpdatedAt { get; set; } = DateTime.UtcNow;
 
-    public ICollection<Conversation> Conversations { get; set; } = new List<Conversation>();
+    public Conversation? Conversation { get; set; }
 }

@@ -23,5 +23,5 @@ public class Review
     [MaxLength(2000)]
     public required string Comment { get; set; }
 
-    public DateTime CreatedAt { get; set; }
+    public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
 }

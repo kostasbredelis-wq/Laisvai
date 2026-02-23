@@ -24,9 +24,9 @@ public class ClientProfile
     [MaxLength(500)]
     public string? AvatarUrl { get; set; }
 
-    public DateTime CreatedAt { get; set; }
+    public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
 
-    public DateTime UpdatedAt { get; set; }
+    public DateTime UpdatedAt { get; set; } = DateTime.UtcNow;
 
     public ICollection<JobListing> JobListings { get; set; } = new List<JobListing>();
 

@@ -21,5 +21,5 @@ public class Message
 
     public bool IsRead { get; set; } = false;
 
-    public DateTime SentAt { get; set; }
+    public DateTime SentAt { get; set; } = DateTime.UtcNow;
 }
