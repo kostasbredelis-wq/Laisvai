@@ -60,10 +60,10 @@ public class ApplicationsController : ControllerBase
         _context.Applications.Add(application);
         await _context.SaveChangesAsync(cancellationToken);
 
-        await _context.Entry(application).Reference(a => a.JobListing).LoadAsync(cancellationToken);
-        await _context.Entry(application).Reference(a => a.Freelancer).LoadAsync(cancellationToken);
+        application.JobListing = listing;
+        application.Freelancer = profile;
 
-        return CreatedAtAction(nameof(GetMyApplications), null, MapToResponseDto(application));
+        return StatusCode(201, MapToResponseDto(application));
     }
 
     [HttpGet("~/api/jobs/{jobId:int}/applications")]
@@ -79,13 +79,16 @@ public class ApplicationsController : ControllerBase
         if (client == null)
             return NotFound();
 
-        var listing = await _context.JobListings
-            .FirstOrDefaultAsync(j => j.Id == jobId, cancellationToken);
+        var listingExists = await _context.JobListings
+            .AnyAsync(j => j.Id == jobId, cancellationToken);
 
-        if (listing == null)
+        if (!listingExists)
             return NotFound();
 
-        if (listing.ClientId != client.Id)
+        var ownsListing = await _context.JobListings
+            .AnyAsync(j => j.Id == jobId && j.ClientId == client.Id, cancellationToken);
+
+        if (!ownsListing)
             return StatusCode(403, new { message = "You do not own this job listing." });
 
         var applications = await _context.Applications
@@ -136,6 +139,7 @@ public class ApplicationsController : ControllerBase
         var application = await _context.Applications
             .Include(a => a.JobListing)
             .Include(a => a.Freelancer)
+            .Include(a => a.Conversation)
             .FirstOrDefaultAsync(a => a.Id == id, cancellationToken);
 
         if (application == null)
@@ -146,6 +150,9 @@ public class ApplicationsController : ControllerBase
 
         if (application.Status != ApplicationStatus.Pending)
             return BadRequest(new { message = "Only pending applications can be accepted." });
+
+        if (application.Conversation != null)
+            return BadRequest(new { message = "A conversation already exists for this application." });
 
         application.Status = ApplicationStatus.Accepted;
         application.UpdatedAt = DateTime.UtcNow;
